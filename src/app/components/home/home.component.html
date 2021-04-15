@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let pais of paises; let i = index">
+        {{pais.name}} - {{pais.nativeName}}-Poblacion({{pais.population |number}})
+    </li>
+</ul>
