@@ -1,18 +1,17 @@
+import { Artists } from './artist.model';
+
 export class Album {
     name: string;
     release_date: Date;
     album_type: string;
-    artists: {
-        nameArtist:string
-    }
+    artists:string[] = []
+       
 
     constructor(
         name: string,
         release_date: Date,
         album_type: string,
-        artists: {
-            nameArtist:string
-        }
+        artists:string[] = []
     ) {
         this.name = name;
         this.release_date = release_date;

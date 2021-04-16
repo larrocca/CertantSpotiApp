@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 import { Pais } from '../models/pais.model';
+import { Album } from '../models/album.model';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { Pais } from '../models/pais.model';
 export class HomeComponent implements OnInit {
 
   paises:Pais[] = []
-  nuevosAlbums: any[] = []
+  nuevosAlbums: Album[] = []
 
   constructor(
     private _spotifyService: SpotifyService
