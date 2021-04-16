@@ -21,11 +21,11 @@ export class SpotifyService {
     });
     //Se tiene que pasar como header de la peticion http la Authorization que nos pidio al hacer el GET en postman(el Bearer mas el token)
     this.http.get('https://api.spotify.com/v1/browse/new-releases',{headers}) //Con el limit determinamos la cantidad de registros que queremos recibir
-              .subscribe(data =>{
-                this.resultado = data
+              .subscribe((data:any) =>{
+                this.resultado = data.albums.items
                 console.log(this.resultado)
                 for (let index = 0; index < this.resultado.length; index++) {
-                  this.albums.push(new Album(this.resultado[index].items[index].name,this.resultado.items[index].release_date,this.resultado.items[index].album_type,this.resultado.items[index].artists[0].name))
+                  this.albums.push(new Album(this.resultado[index].name,this.resultado[index].release_date,this.resultado[index].album_type,this.resultado[index].artists[0].name))
                 }
               })
               console.log(this.albums)

@@ -10,11 +10,10 @@ import { Pais } from '../models/pais.model';
 })
 export class HomeComponent implements OnInit {
 
-  paises:any[] = []
+  paises:Pais[] = []
   nuevosAlbums: any[] = []
 
   constructor(
-    private http: HttpClient,
     private _spotifyService: SpotifyService
   ) {
     this.paises = this._spotifyService.getPaises()
